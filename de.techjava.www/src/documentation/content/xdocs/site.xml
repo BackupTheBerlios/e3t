@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<site label="general" href="" tab="general" xmlns="http://apache.org/forrest/linkmap/1.0">
+
+	<general label="general"	tab="general"				href="">
+    <index1		label="overview"	href="index.html"		description="Welcome to techjava.de"/>
+    <changes	label="changes"		href="changes.html" description="History of Changes" />
+    <todo			label="todo"			href="todo.html"		description="Todo List" />
+	</general>
+
+	<projects label="projects" tab="projects"			href="projects/" >
+		<index2		label="overview"	href="index.html"			description="Project Overview" />
+		<plugins	label="plugins"		href="plugins/">
+			<index3	label="overview"	href="index.html"			description="Project Overview" />
+			<tla		label="TLA+"			href="tla/index.html" description="TLA+ Support"/>
+		</plugins>
+
+	</projects>
+  
+  	<images>
+  		<installation href="images/installation.png" />
+  	</images>
+	
+	<!--external-refs>
+    <forrest href="http://forrest.apache.org/">
+      <linking href="docs/linking.html"/>
+      <validation href="docs/validation.html"/>
+      <webapp href="docs/your-project.html#webapp"/>
+      <dtd-docs href="docs/dtd-docs.html"/>
+    </forrest>
+    <cocoon href="http://cocoon.apache.org/"/>
+    <xml.apache.org href="http://xml.apache.org/"/>
+  </external-refs-->
+
+</site>

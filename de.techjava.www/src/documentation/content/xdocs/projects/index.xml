@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+	<header>
+		<title>techJava | projects</title>
+	</header>
+	<body>
+		<section>
+			<title>Projects</title>
+			<p>
+				In this section we introduce projects which are featured
+				by techJava
+			</p>
+			<section>
+				<title>Eclipse Plugins</title>
+				<p>
+					Currently, only the TLA+ Plugin is featured by
+					techJava. Please visit
+					<a href="site:plugins">plugins section</a>
+					for further details
+				</p>
+			</section>
+		</section>
+	</body>
+</document>

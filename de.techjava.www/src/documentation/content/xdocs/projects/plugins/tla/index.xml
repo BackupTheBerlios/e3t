@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+	<header>
+		<title>techJava | projects | plugins | TLA+ Plugin</title>
+	</header>
+	<body>
+		<section>
+			<title>TLA+ Plugin</title>
+			<p>
+				TLA+ Eclipse plugin adds capability of working with TLA+
+				(formal specification language) inside Eclipse IDE. It
+				is a wraper around the
+				<a
+					href="http://research.microsoft.com/users/lamport/tla/tools.html">
+					TLA+ Tools
+				</a>
+				, making them more convenient for use inside the Eclipse
+				IDE.
+			</p>
+			<p>
+				TLA (The Temporal Logic of Actions) is a logic for
+				specifying and reasoning about concurrent and reactive
+				systems. It is the basis for TLA+, a complete
+				specification language. For further informations on
+				TLA-related subjects, please visit the page of
+				<a href="http://www.lamport.org/">Leslie Lamport</a>
+				or the
+				<a
+					href="http://research.microsoft.com/users/lamport/tla/tla.html">
+					official TLA web page
+				</a>
+				.
+			</p>
+			<p>
+				The first impression of how the plugin works can be
+				gathered by viewing a Flash <a href="tla_plugin_0.0.2.html">demo</a>. 
+			</p>
+			<section>
+				<title>Supported Features</title>
+				<ul>
+					<li>TLA+ Project support</li>
+					<li>
+						TLA+ Editor with syntax highlighting and
+						autocompletion
+					</li>
+					<li>
+						Tight integration of TLA+ Tools, enables syntax
+						and semantic analysis and problem reporting
+						triggered by save of resource.
+					</li>
+					<li>
+						Integration of TLC Model Checker (over Run As
+						menu)
+					</li>
+					<li>TLA+ Working Sets</li>					
+				</ul>
+			</section>
+			<section>
+				<title>Further Development</title>
+				<ul>
+					<li>TLA+ Editor Outline</li>
+					<li>Configuration file editor</li>
+					<li>Support of TLC simulation mode</li>
+					<li>Support of TLATEX pretty print utility</li>
+				</ul>
+			</section>
+			<section>
+				<title>Prerequirements</title>
+				<p>The plugin has been tested under <a href="http://www.eclipse.org/">Eclipse 3.1</a></p>
+			</section>
+			<section>
+				<title>Licensing</title>
+				<p>Please note, that the TLA+ Plugin is free for non-commercial use, because it uses parts of code
+				which underlies Microsoft Shared Research License.</p>
+			</section>
+			<section>
+				<title>Installation</title>
+				<p>In order to install the plugin please use techJava Update Site for Eclipse Update Manager.
+				It can be accessed under <strong>http://update.techjava.de/</strong>.</p>
+			<p>
+				After installation please set up the TLA+ library
+				modules using
+				<strong>
+					Window > Preferences... > TLA+ Preferences > Syntax
+					Analyser > Add...
+				</strong>.
+			</p>
+			<p> 
+				<img src="site:images/installation" alt="TLA+ Plugin module settings" /> </p>
+			<p>
+				The default TLA+ library modules can be found at
+				<strong>[ECLIPSE-INSTALL-DIRECTORY]/plugins/de.techjava.tla.modules_0.0.1/modules/</strong>
+			</p>
+			</section>
+			<section>
+				<title>Further Questions</title>
+				<p>Please visit the <a href="http://www.sourceforge.net/projects/etla/">eTLA Sourceforge Project site</a></p>
+			</section>
+		</section>
+	</body>
+</document>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="de.techjava.tla.ui.parser">
+      <ParserRuntime
+            class="de.techjava.tla.core.parser.TLCParserRuntime"
+            id="de.techjava.tla.core.ParserRuntime1"/>
+      <ParserConfiguration
+            class="de.techjava.tla.core.parser.TLCParserRuntime"
+            id="de.techjava.tla.core.ParserConfiguration1"/>
+	</extension>
+   
+   
+	<extension point="de.techjava.tla.ui.modelchecker">
+      <ModelCheckerRuntime
+            class="de.techjava.tla.core.check.TLCModelCheckRuntime"
+            id="de.techjava.tla.core.check.ModelCheckerRuntime1"/>
+      <ModelCheckerConfiguration
+            class="de.techjava.tla.core.check.TLCModelCheckRuntime"
+            id="de.techjava.tla.core.check.ModelCheckerConfiguration1"/>
+	</extension>
+
+</plugin>

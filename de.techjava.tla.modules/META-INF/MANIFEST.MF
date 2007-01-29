@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Default TLA+ Modules Plug-in
+Bundle-SymbolicName: de.techjava.tla.modules
+Bundle-Version: 0.0.1
+Bundle-Activator: de.techjava.tla.modules.ModulesPlugin
+Bundle-Vendor: Simon Zambrovski
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Eclipse-AutoStart: true
+Export-Package: de.techjava.tla.modules

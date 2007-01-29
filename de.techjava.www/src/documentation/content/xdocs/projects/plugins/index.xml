@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "-//APACHE//DTD Documentation V2.0//EN" "http://forrest.apache.org/dtd/document-v20.dtd">
+<document>
+	<header>
+		<title>techJava | projects | plugins</title>
+	</header>
+	<body>
+		<section>
+			<title>Plugin overview</title>
+			<p></p>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Short description</th>
+					<th>Last published</th>
+					<th>Link</th>
+				</tr>
+				<tr>
+					<td>TLA+ Eclipse plugin</td>
+					<td>TLA+ support in Eclipse IDE</td>
+					<td>27.10.2004</td>
+					<td>
+						<a href="tla/index.html">visit</a>
+					</td>
+				</tr>
+			</table>
+		</section>
+		<section>
+			<title>Installation notes</title>
+			<p>
+				The plugins listed above can be installed using Eclipse
+				Update Manager. Use the
+				<a href="http://update.techjava.de/">
+					http://update.techjava.de/
+				</a>
+				URL to install the plugins.
+			</p>
+		</section>
+	</body>
+</document>

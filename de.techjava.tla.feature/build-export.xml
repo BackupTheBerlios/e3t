@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="feature_export">
+	<target name="feature_export">
+		<pde.exportFeatures features="de.techjava.tla.feature" destination="C:\Projects\research\projects\tla\workspace\de.techjava.tla.updatesite" exportType="update" exportSource="false"/>
+	</target>
+</project>

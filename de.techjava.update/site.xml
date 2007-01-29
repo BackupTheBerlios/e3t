@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://update.techjava.de/">
+      Eclipse update site for plugins developed by techjava.de group.
+   </description>
+   <feature url="features/de.techjava.tla.feature_0.0.3.jar" id="de.techjava.tla.feature" version="0.0.3">
+      <category name="TLA+"/>
+   </feature>
+   <feature url="features/de.techjava.tla.feature_0.0.4.jar" id="de.techjava.tla.feature" version="0.0.4">
+      <category name="TLA+"/>
+   </feature>
+   <category-def name="TLA+" label="TLA+ Feature">
+      <description>
+         Enables the TLA+ integration in Eclipse IDE.
+      </description>
+   </category-def>
+</site>

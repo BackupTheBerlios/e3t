@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     22.08.2005 16:36:49                                                        
+
+     tla-tools    
+     Changed TLA+ tools from http://www.lapmort.org/
+                   
+     Zambrovski                                                                
+     ====================================================================== -->
+<project name="tla-tools" default="project.default">
+
+
+
+	<description>
+            Changed TLA+ tools from http://www.lapmort.org/
+    </description>
+
+	<target name="project.default">
+		<antcall target="project.compile" inheritall="true" inheritrefs="true" />
+		<antcall target="project.jar" inheritall="true" inheritrefs="true" />		
+	</target>
+
+	<target name="project.init">
+		<property name="src.dir" value="java/src" />
+		<property name="class.dir" value="java/class" />
+		<property name="build.dir" value="java/build" />
+		<property name="jar.path" value="${build.dir}/tla-tools_2.1.0.jar" />
+		<property name="srczip.path" value="${build.dir}/tla-tools-src_2.1.0.zip" />
+	</target>
+
+	<!--
+	Creating class files
+	-->
+	<target name="project.compile" depends="project.init">
+
+		<echo message="Compiling source files with Java SE ${ant.java.version}" />
+		<mkdir dir="${class.dir}" />
+		<javac destdir="${class.dir}" srcdir="${src.dir}" includes="**/**" listfiles="yes" debug="true" />
+
+	</target>
+	<!-- 
+	Creating a JAR file
+	-->
+	<target name="project.jar" depends="project.init">
+		<echo level="info" message="Deleting old JAR file" />
+		<delete file="${jar.path}" />
+		<mkdir dir="${build.dir}" />
+		<echo level="info" message="Building a new JAR file with Java SE ${ant.java.version}" />
+		<jar basedir="${class.dir}" jarfile="${jar.path}">
+			<include name="**/**.*" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Implementation-Title" value="eTLA, tla-tools" />
+				<attribute name="Implementation-Version" value="" />
+				<attribute name="Implementation-Vendor" value="techjava.de" />
+				<attribute name="Sealed" value="false" />
+			</manifest>
+		</jar>
+	</target>
+	<!--
+	Creating source ZIP
+	-->
+	<target name="project.createsource" depends="project.init">
+		<echo level="info" message="Deleting old source ZIP file" />
+		<delete file="${srczip.path}" />
+		<mkdir dir="${build.dir}" />
+		<echo level="info" message="Building a new source ZIP file" />
+		<zip destfile="${srczip.path}">
+			<fileset dir="${basedir}">
+				<include name="**/**.*"/>
+				<exclude name="${build.dir}/**" />
+				<exclude name="${class.dir}/**" />				
+			</fileset>
+		</zip>
+	</target>
+</project>
+

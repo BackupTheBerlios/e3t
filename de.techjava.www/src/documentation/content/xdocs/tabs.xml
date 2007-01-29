@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tabs PUBLIC "-//APACHE//DTD Cocoon Documentation Tab V1.1//EN" "http://forrest.apache.org/dtd/tab-cocoon-v11.dtd">
+
+<tabs software="techJava"
+  title="techJava"
+  copyright="techJava"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <tab id="general"		label="general"		dir=""					indexfile="index.html"/>
+  <tab id="projects"	label="projects"	dir="projects"	indexfile="index.html" />
+
+</tabs>
