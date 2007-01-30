@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="java/src"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/tla-tools.jar"/>
 	<classpathentry kind="lib" path="/tla-tools/java/class"/>
 	<classpathentry kind="output" path="java/class"/>
 </classpath>
