@@ -107,9 +107,9 @@ public class Explorer {
 
       // Collect in Vector symbols all SymbolNodes in the semNodesTable whose name == symbName
 
-      for ( Enumeration enum = semNodesTable.elements(); enum.hasMoreElements(); ) {
+      for ( Enumeration varEnum = semNodesTable.elements(); varEnum.hasMoreElements(); ) {
 
-        Object semNode = enum.nextElement();
+        Object semNode = varEnum.nextElement();
 
         if ( semNode instanceof SymbolNode && 
              ((SymbolNode)semNode).getName() == UniqueString.uniqueStringOf(symbName) ) {
@@ -136,9 +136,9 @@ public class Explorer {
 
       // Collect in Vector symbols all SymbolNodes in the semNodesTable whose name == symbName
 
-      for ( Enumeration enum = semNodesTable.elements(); enum.hasMoreElements(); ) {
+      for ( Enumeration varEnum = semNodesTable.elements(); varEnum.hasMoreElements(); ) {
 
-        Object semNode = enum.nextElement();
+        Object semNode = varEnum.nextElement();
 
         if ( semNode instanceof SymbolNode && 
              ((SymbolNode)semNode).getName() == UniqueString.uniqueStringOf(symbName) ) {
@@ -173,9 +173,9 @@ public class Explorer {
 
       // Collect in Vector symbols all SymbolNodes in the semNodesTable whose name == symbName
 
-      for ( Enumeration enum = semNodesTable.elements(); enum.hasMoreElements(); ) {
+      for ( Enumeration varEnum = semNodesTable.elements(); varEnum.hasMoreElements(); ) {
 
-        Object semNode = enum.nextElement();
+        Object semNode = varEnum.nextElement();
 
         if ( semNode instanceof SymbolNode && 
              ((SymbolNode)semNode).getName() == UniqueString.uniqueStringOf(symbName) ) {

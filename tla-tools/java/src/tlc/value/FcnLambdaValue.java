@@ -438,10 +438,10 @@ public class FcnLambdaValue extends Value implements Applicable {
       Value[] domain = new Value[sz];
       Value[] values = new Value[sz];
       int idx = 0;
-      ValueEnumeration enum = this.params.elements();    
+      ValueEnumeration varEnum = this.params.elements();    
       Value arg;
       if (this.params.length() == 1) {
-	while ((arg = enum.nextElement()) != null) {
+	while ((arg = varEnum.nextElement()) != null) {
 	  domain[idx] = arg;
 	  Context c1 = this.con;
 	  if (isTuples[0]) {
@@ -458,7 +458,7 @@ public class FcnLambdaValue extends Value implements Applicable {
 	}
       }
       else {
-	while ((arg = enum.nextElement()) != null) {
+	while ((arg = varEnum.nextElement()) != null) {
 	  domain[idx] = arg;
 	  Value[] argList = ((TupleValue)arg).elems;
 	  int argn = 0;

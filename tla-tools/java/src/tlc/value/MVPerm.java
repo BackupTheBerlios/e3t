@@ -111,12 +111,12 @@ public final class MVPerm {
     return sb.toString();
   }
 
-  public static final MVPerm[] permutationSubgroup(ValueEnumeration enum) {
+  public static final MVPerm[] permutationSubgroup(ValueEnumeration varEnum) {
     Set perms = new Set(20);
     Vect permVec = new Vect(20);
     // Compute the group generators:
     Value elem;
-    while ((elem = enum.nextElement()) != null) {
+    while ((elem = varEnum.nextElement()) != null) {
       FcnRcdValue fcn = FcnRcdValue.convert(elem);
       if (fcn == null) {
 	Assert.fail("The symmetry operator must specify a set of functions.");

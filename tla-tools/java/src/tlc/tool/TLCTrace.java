@@ -308,9 +308,9 @@ public class TLCTrace {
   public static void main(String[] args) {
     try {
       TLCTrace trace = new TLCTrace(args[0], args[1], null);
-      Enumerator enum = trace.elements();
-      while (enum.nextPos() != -1) {
-	RuntimeConfiguration.get().getErrStream().println(enum.nextFP());
+      Enumerator varEnum = trace.elements();
+      while (varEnum.nextPos() != -1) {
+	RuntimeConfiguration.get().getErrStream().println(varEnum.nextFP());
       }
     }
     catch (Exception e) { e.printStackTrace(); }

@@ -90,9 +90,9 @@ implements Enumerable, Reducible {
       for (int i = this.low; i <= this.high; i++) {
 	cupElems.addElement(IntValue.gen(i));
       }
-      ValueEnumeration enum = ((Enumerable)set).elements();
+      ValueEnumeration varEnum = ((Enumerable)set).elements();
       Value elem;
-      while ((elem = enum.nextElement()) != null) {
+      while ((elem = varEnum.nextElement()) != null) {
 	if (!this.member(elem)) cupElems.addElement(elem);
       }
       return new SetEnumValue(cupElems, false);

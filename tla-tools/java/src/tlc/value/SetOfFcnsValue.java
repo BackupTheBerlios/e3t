@@ -217,7 +217,7 @@ public class SetOfFcnsValue extends Value implements Enumerable {
 	this.dom = new Value[sz];
 	this.enums = new ValueEnumeration[sz];
 	this.currentElems = new Value[sz];
-	ValueEnumeration enum = ((Enumerable)domSet).elements();
+	ValueEnumeration varEnum = ((Enumerable)domSet).elements();
 	for (int i = 0; i < sz; i++) {
 	  this.dom[i] = elems.elementAt(i);
 	  this.enums[i] = ((Enumerable)range).elements();

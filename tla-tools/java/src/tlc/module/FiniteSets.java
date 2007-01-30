@@ -36,10 +36,10 @@ public class FiniteSets implements ValueConstants {
     }
     int size = Cardinality(set).val;
     Value[] elems = new Value[size];
-    ValueEnumeration enum = ((Enumerable)set).elements();
+    ValueEnumeration varEnum = ((Enumerable)set).elements();
     Value val;
     int i = 0;
-    while ((val = enum.nextElement()) != null) {
+    while ((val = varEnum.nextElement()) != null) {
       elems[i++] = val;
     }
     return new TupleValue(elems);
@@ -69,9 +69,9 @@ public class FiniteSets implements ValueConstants {
     for (i = 0; i < lsz; i++) {
       elems[i] = tv.elems[i];
     }
-    ValueEnumeration enum = ((Enumerable)set).elements();
+    ValueEnumeration varEnum = ((Enumerable)set).elements();
     Value elem;
-    while ((elem = enum.nextElement()) != null) {
+    while ((elem = varEnum.nextElement()) != null) {
       elems[i++] = elem;
     }
     return new TupleValue(elems);

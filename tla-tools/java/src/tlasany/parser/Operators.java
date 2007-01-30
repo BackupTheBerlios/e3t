@@ -79,8 +79,8 @@ public class Operators {
 /* debugging help */
   static public void printTable() {
       RuntimeConfiguration.get().getOutStream().println("printing Operators table");
-    Enumeration enum = DefinitionTable.keys();
-    while( enum.hasMoreElements() ) { RuntimeConfiguration.get().getOutStream().println("-> " + ((UniqueString)enum.nextElement()).toString() ); }
+    Enumeration varEnum = DefinitionTable.keys();
+    while( varEnum.hasMoreElements() ) { RuntimeConfiguration.get().getOutStream().println("-> " + ((UniqueString)varEnum.nextElement()).toString() ); }
   }
 
 // shouldn't be necessary

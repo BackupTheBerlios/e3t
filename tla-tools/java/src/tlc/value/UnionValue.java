@@ -34,9 +34,9 @@ public class UnionValue extends Value implements Enumerable {
 		  "\nis an element of the non-enumerable set:\n " +
 		  ppr(this.toString()));
     }
-    ValueEnumeration enum = ((Enumerable)this.set).elements();
+    ValueEnumeration varEnum = ((Enumerable)this.set).elements();
     Value val;
-    while ((val = enum.nextElement()) != null) {
+    while ((val = varEnum.nextElement()) != null) {
       if (val.member(elem)) return true;
     }
     return false;
@@ -47,9 +47,9 @@ public class UnionValue extends Value implements Enumerable {
       Assert.fail("Attempted to check if the nonenumerable set:\n" + ppr(this.toString()) +
 		  "\nis a finite set.");
     }
-    ValueEnumeration enum = ((Enumerable)this.set).elements();
+    ValueEnumeration varEnum = ((Enumerable)this.set).elements();
     Value val;
-    while ((val = enum.nextElement()) != null) {
+    while ((val = varEnum.nextElement()) != null) {
       if (!val.isFinite()) return false;
     }
     return true;
@@ -169,7 +169,7 @@ public class UnionValue extends Value implements Enumerable {
   }
   
   final class Enumerator implements ValueEnumeration {
-    ValueEnumeration enum;
+    ValueEnumeration varEnum;
     Value elemSet;
     ValueEnumeration elemSetEnum;
     
@@ -178,8 +178,8 @@ public class UnionValue extends Value implements Enumerable {
 	Assert.fail("Attempted to enumerate the nonenumerable set:\n"+
 		    ppr(this.toString()));
       }
-      this.enum = ((Enumerable)set).elements();
-      this.elemSet = this.enum.nextElement();
+      this.varEnum = ((Enumerable)set).elements();
+      this.elemSet = this.varEnum.nextElement();
       if (this.elemSet != null) {
 	if (!(this.elemSet instanceof Enumerable)) {
 	  Assert.fail("Attempted to enumerate UNION(s), but some element of s is nonenumerable.");
@@ -189,8 +189,8 @@ public class UnionValue extends Value implements Enumerable {
     }
 
     public final void reset() {
-      this.enum.reset();
-      this.elemSet = this.enum.nextElement();
+      this.varEnum.reset();
+      this.elemSet = this.varEnum.nextElement();
       this.elemSetEnum = ((Enumerable)this.elemSet).elements();
     }
 
@@ -198,7 +198,7 @@ public class UnionValue extends Value implements Enumerable {
       if (this.elemSet == null) return null;
       Value val = this.elemSetEnum.nextElement();
       if (val == null) {
-	this.elemSet = this.enum.nextElement();
+	this.elemSet = this.varEnum.nextElement();
 	if (this.elemSet == null) return null;
 	if (!(this.elemSet instanceof Enumerable)) {
 	  Assert.fail("Attempted to enumerate the nonenumerable set:\n" +

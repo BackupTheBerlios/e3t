@@ -129,11 +129,11 @@ public class ExternalModuleTable implements ExploreNode {
   }
 
   public String toString() {
-    Enumeration enum = moduleHashTable.elements();
+    Enumeration varEnum = moduleHashTable.elements();
     String ret = "";
 
-    for (int i=1; enum.hasMoreElements(); i++) {
-      ExternalModuleTableEntry mte = (ExternalModuleTableEntry)enum.nextElement();
+    for (int i=1; varEnum.hasMoreElements(); i++) {
+      ExternalModuleTableEntry mte = (ExternalModuleTableEntry)varEnum.nextElement();
       ret = ret + mte.toString();
     }
     return "\nModule Table:" + Strings.indent(2,ret);
@@ -178,10 +178,10 @@ public class ExternalModuleTable implements ExploreNode {
   }
 
   public void walkGraph(Hashtable moduleNodesTable) {
-    Enumeration enum = moduleHashTable.elements();
+    Enumeration varEnum = moduleHashTable.elements();
 
-    while ( enum.hasMoreElements() ) {
-	ExternalModuleTableEntry mte = (ExternalModuleTableEntry)enum.nextElement();
+    while ( varEnum.hasMoreElements() ) {
+	ExternalModuleTableEntry mte = (ExternalModuleTableEntry)varEnum.nextElement();
 	mte.walkGraph(moduleNodesTable);
     }
   }

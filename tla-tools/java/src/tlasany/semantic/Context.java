@@ -401,10 +401,10 @@ final public class Context implements ExploreNode {
 
   public final void walkGraph(Hashtable semNodesTable) {
     UniqueString key;
-    Enumeration  enum = table.keys();
+    Enumeration  varEnum = table.keys();
 
-    while (enum.hasMoreElements()) {
-      key = (UniqueString)enum.nextElement();
+    while (varEnum.hasMoreElements()) {
+      key = (UniqueString)varEnum.nextElement();
       ((Pair)table.get(key)).info.walkGraph(semNodesTable);
     }
   }

@@ -37,9 +37,9 @@ public class ModelValue extends Value {
   /* Collect all the model values defined thus far. */
   public static void setValues() {
     mvs = new ModelValue[mvTable.size()];    
-    Enumeration enum = mvTable.elements();
-    while (enum.hasMoreElements()) {
-      ModelValue mv = (ModelValue)enum.nextElement();
+    Enumeration varEnum = mvTable.elements();
+    while (varEnum.hasMoreElements()) {
+      ModelValue mv = (ModelValue)varEnum.nextElement();
       mvs[mv.index] = mv;
     }
   }

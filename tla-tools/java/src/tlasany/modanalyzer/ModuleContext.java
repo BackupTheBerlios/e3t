@@ -50,9 +50,9 @@ public class ModuleContext {
    */
   void union (ModuleContext unionee) {
 
-    Enumeration enum = unionee.context.keys();
-    while ( enum.hasMoreElements() ) {
-      String key = (String)enum.nextElement();
+    Enumeration varEnum = unionee.context.keys();
+    while ( varEnum.hasMoreElements() ) {
+      String key = (String)varEnum.nextElement();
       this.bindIfNotBound(key,unionee.resolve(key));
     }
 
@@ -60,10 +60,10 @@ public class ModuleContext {
 
   public String toString() {
     String ret = "Context:\n";
-    Enumeration enum = context.keys();
+    Enumeration varEnum = context.keys();
 
-    while (enum.hasMoreElements()) {
-      String key = (String)enum.nextElement();
+    while (varEnum.hasMoreElements()) {
+      String key = (String)varEnum.nextElement();
       ModulePointer modPointer = (ModulePointer)context.get(key);
 
       ret = ret + "  " + key + "-->" + (modPointer != null ? modPointer.toStringAbbrev() : "null");

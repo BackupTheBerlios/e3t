@@ -38,9 +38,9 @@ public class SubsetValue extends Value implements Enumerable {
 
   public final boolean member(Value val) {
     if (val instanceof Enumerable) {
-      ValueEnumeration enum = ((Enumerable)val).elements();
+      ValueEnumeration varEnum = ((Enumerable)val).elements();
       Value elem;
-      while ((elem = enum.nextElement()) != null) {
+      while ((elem = varEnum.nextElement()) != null) {
 	if (!this.set.member(elem)) return false;
       }
     }

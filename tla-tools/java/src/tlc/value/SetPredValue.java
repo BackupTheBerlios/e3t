@@ -198,21 +198,21 @@ public class SetPredValue extends Value implements Enumerable {
   }
   
   final class Enumerator implements ValueEnumeration {
-    ValueEnumeration enum;
+    ValueEnumeration varEnum;
 
     public Enumerator() {
       if (!(inVal instanceof Enumerable)) {
 	Assert.fail("Attempted to enumerate { x \\in S : p(x) } when S:\n" +
 		    ppr(inVal.toString()) + "\nis not enumerable");
       }
-      this.enum = ((Enumerable)inVal).elements();
+      this.varEnum = ((Enumerable)inVal).elements();
     }
     
-    public final void reset() { this.enum.reset(); }
+    public final void reset() { this.varEnum.reset(); }
 
     public final Value nextElement() {
       Value elem;
-      while ((elem = this.enum.nextElement()) != null) {
+      while ((elem = this.varEnum.nextElement()) != null) {
 	Context con1 = con;
 	if (vars instanceof OpDeclNode) {
 	  con1 = con1.cons((OpDeclNode)vars, elem);

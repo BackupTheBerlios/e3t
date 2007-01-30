@@ -208,10 +208,10 @@ public class Tool
       {
 	int cnt = this.actionVec.size();
 	try {
-	  ContextEnumerator enum =
+	  ContextEnumerator varEnum =
 	    this.contexts(next, con, TLCState.Empty, TLCState.Empty, EvalControl.Clear);
 	  Context econ;
-	  while ((econ = enum.nextElement()) != null) {
+	  while ((econ = varEnum.nextElement()) != null) {
 	    this.getActions(args[0], econ);
 	  }
 	}
@@ -408,9 +408,9 @@ public class Tool
     case OPCODE_be:     // BoundedExists
       {
 	SemanticNode body = args[0];
-	ContextEnumerator enum = this.contexts(init, c, ps, TLCState.Empty, EvalControl.Clear);
+	ContextEnumerator varEnum = this.contexts(init, c, ps, TLCState.Empty, EvalControl.Clear);
 	Context c1;
-	while ((c1 = enum.nextElement()) != null) {
+	while ((c1 = varEnum.nextElement()) != null) {
 	  this.getInitStates(body, acts, c1, ps, states);
 	}
 	return;
@@ -418,15 +418,15 @@ public class Tool
     case OPCODE_bf:     // BoundedForall
       {
 	SemanticNode body = args[0];
-	ContextEnumerator enum = this.contexts(init, c, ps, TLCState.Empty, EvalControl.Clear);
-	Context c1 = enum.nextElement();
+	ContextEnumerator varEnum = this.contexts(init, c, ps, TLCState.Empty, EvalControl.Clear);
+	Context c1 = varEnum.nextElement();
 	if (c1 == null) {
 	  this.getInitStates(acts, ps, states);
 	}
 	else {
 	  ActionItemList acts1 = acts;
 	  Context c2;
-	  while ((c2 = enum.nextElement()) != null) {
+	  while ((c2 = varEnum.nextElement()) != null) {
 	    acts1 = acts1.cons(body, c2, -1);
 	  }
 	  this.getInitStates(body, acts1, c1, ps, states);
@@ -545,9 +545,9 @@ public class Tool
 	      Assert.fail("In computing initial states, the right side of \\IN" +
 			  " is not enumerable.\n" + init);
 	    }
-	    ValueEnumeration enum = ((Enumerable)rval).elements();
+	    ValueEnumeration varEnum = ((Enumerable)rval).elements();
 	    Value elem;
-	    while ((elem = enum.nextElement()) != null) {
+	    while ((elem = varEnum.nextElement()) != null) {
 	      ps.bind(varName, elem, init);
 	      this.getInitStates(acts, ps, states);
 	      ps.unbind(varName);
@@ -760,9 +760,9 @@ public class Tool
     case OPCODE_be:     // BoundedExists
       {
 	SemanticNode body = args[0];
-	ContextEnumerator enum = this.contexts(pred, c, s0, s1, EvalControl.Clear);
+	ContextEnumerator varEnum = this.contexts(pred, c, s0, s1, EvalControl.Clear);
 	Context c1;
-	while ((c1 = enum.nextElement()) != null) {
+	while ((c1 = varEnum.nextElement()) != null) {
 	  this.getNextStates(body, acts, c1, s0, s1, nss);
 	}
 	return;	
@@ -770,15 +770,15 @@ public class Tool
     case OPCODE_bf:     // BoundedForall
       {
 	SemanticNode body = args[0];
-	ContextEnumerator enum = this.contexts(pred, c, s0, s1, EvalControl.Clear);
-	Context c1 = enum.nextElement();
+	ContextEnumerator varEnum = this.contexts(pred, c, s0, s1, EvalControl.Clear);
+	Context c1 = varEnum.nextElement();
 	if (c1 == null) {
 	  this.getNextStates(acts, s0, s1, nss);
 	}
 	else {
 	  ActionItemList acts1 = acts;
 	  Context c2;
-	  while ((c2 = enum.nextElement()) != null) {
+	  while ((c2 = varEnum.nextElement()) != null) {
 	    acts1 = acts1.cons(body, c2, -1);
 	  }
 	  this.getNextStates(body, acts1, c1, s0, s1, nss);
@@ -915,9 +915,9 @@ public class Tool
 	      Assert.fail("In computing next states, the right side of \\IN" +
 			  " is not enumerable.\n" + pred);
 	    }
-	    ValueEnumeration enum = ((Enumerable)rval).elements();
+	    ValueEnumeration varEnum = ((Enumerable)rval).elements();
 	    Value elem;
-	    while ((elem = enum.nextElement()) != null) {
+	    while ((elem = varEnum.nextElement()) != null) {
 	      s1.bind(varName, elem, pred);
 	      this.getNextStates(acts, s0, s1, nss);
 	      s1.unbind(varName);
@@ -1261,10 +1261,10 @@ public class Tool
     case OPCODE_be:     // BoundedExists
       {
 	// Assert.check(args.length == 1);
-	ContextEnumerator enum = this.contexts(expr, c, s0, s1, control);
+	ContextEnumerator varEnum = this.contexts(expr, c, s0, s1, control);
 	SemanticNode body = args[0];
 	Context c1;
-	while ((c1 = enum.nextElement()) != null) {
+	while ((c1 = varEnum.nextElement()) != null) {
 	  Value bval = this.eval(body, c1, s0, s1, control);
 	  if (!(bval instanceof BoolValue)) {
 	    Assert.fail("Expected a boolean expression, but did not find one.\n" +
@@ -1277,10 +1277,10 @@ public class Tool
     case OPCODE_bf:     // BoundedForall
       {
 	// Assert.check(args.length == 1);
-	ContextEnumerator enum = this.contexts(expr, c, s0, s1, control);
+	ContextEnumerator varEnum = this.contexts(expr, c, s0, s1, control);
 	SemanticNode body = args[0];
 	Context c1;
-	while ((c1 = enum.nextElement()) != null) {
+	while ((c1 = varEnum.nextElement()) != null) {
 	  Value bval = this.eval(body, c1, s0, s1, control);
 	  if (!(bval instanceof BoolValue)) {
 	    Assert.fail("Expected a boolean expression, but did not find one.\n" +
@@ -1503,10 +1503,10 @@ public class Tool
     case OPCODE_soa:    // SetOfAll
       {
 	ValueVec vals = new ValueVec();
-	ContextEnumerator enum = this.contexts(expr, c, s0, s1, control);
+	ContextEnumerator varEnum = this.contexts(expr, c, s0, s1, control);
 	SemanticNode body = args[0];
 	Context c1;
-	while ((c1 = enum.nextElement()) != null) {
+	while ((c1 = varEnum.nextElement()) != null) {
 	  Value val = this.eval(body, c1, s0, s1, control);
 	  // vals.addElement(val);
 	  vals.addElement1(val);	  
@@ -1729,9 +1729,9 @@ public class Tool
 	  Assert.fail("TLC was trying to compute the value of an expression of\n" +
 		      "form S \\subseteq T, but S was not enumerable.\n" + expr);
 	}
-	ValueEnumeration enum = ((Enumerable)arg1).elements();
+	ValueEnumeration varEnum = ((Enumerable)arg1).elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  if (!arg2.member(elem)) return ValFalse;
 	}
 	return ValTrue;
@@ -2095,9 +2095,9 @@ public class Tool
     case OPCODE_be:     // BoundedExists
       {
 	SemanticNode body = args[0];
-	ContextEnumerator enum = this.contexts(pred, c, s0, s1, EvalControl.Enabled);
+	ContextEnumerator varEnum = this.contexts(pred, c, s0, s1, EvalControl.Enabled);
 	Context c1;
-	while ((c1 = enum.nextElement()) != null) {
+	while ((c1 = varEnum.nextElement()) != null) {
 	  TLCState s2 = this.enabled(body, acts, c1, s0, s1);
 	  if (s2 != null) return s2;
 	}
@@ -2106,14 +2106,14 @@ public class Tool
     case OPCODE_bf:     // BoundedForall
       {
 	SemanticNode body = args[0];
-	ContextEnumerator enum = this.contexts(pred, c, s0, s1, EvalControl.Enabled);	
-	Context c1 = enum.nextElement();
+	ContextEnumerator varEnum = this.contexts(pred, c, s0, s1, EvalControl.Enabled);	
+	Context c1 = varEnum.nextElement();
 	if (c1 == null) {
 	  return this.enabled(acts, s0, s1);
 	}
 	ActionItemList acts1 = acts;
 	Context c2;
-	while ((c2 = enum.nextElement()) != null) {
+	while ((c2 = varEnum.nextElement()) != null) {
 	  acts1 = acts1.cons(body, c2, -1);
 	}
 	return this.enabled(body, acts1, c1, s0, s1);
@@ -2332,9 +2332,9 @@ public class Tool
 	    if (!(rval instanceof Enumerable)) {
 	      Assert.fail("The right side of \\IN is not enumerable.\n" + pred);
 	    }	      
-	    ValueEnumeration enum = ((Enumerable)rval).elements();
+	    ValueEnumeration varEnum = ((Enumerable)rval).elements();
 	    Value val;
-	    while ((val = enum.nextElement()) != null) {
+	    while ((val = varEnum.nextElement()) != null) {
 	      TLCState s2 = s1.bind(var, val, pred);
 	      s2 = this.enabled(acts, s0, s2);
 	      if (s2 != null) return s2;
@@ -2519,8 +2519,8 @@ public class Tool
     if (!(fcns instanceof Enumerable)) {
       Assert.fail("The symmetry operator must specify a set of functions.");
     }
-    ValueEnumeration enum = ((Enumerable)fcns).elements();
-    return MVPerm.permutationSubgroup(enum);
+    ValueEnumeration varEnum = ((Enumerable)fcns).elements();
+    return MVPerm.permutationSubgroup(varEnum);
   }
 
   public final Context getFcnContext(FcnLambdaValue fcn, ExprOrOpArgNode[] args,

@@ -123,10 +123,10 @@ public class BuiltInLevel implements LevelConstants {
    */
   public static void load () {
     Context gcon = Context.getGlobalContext();
-    Context.ContextSymbolEnumeration enum = gcon.getContextSymbolEnumeration();
+    Context.ContextSymbolEnumeration varEnum = gcon.getContextSymbolEnumeration();
 
-    while (enum.hasMoreElements()) {
-      SymbolNode sn = enum.nextElement();
+    while (varEnum.hasMoreElements()) {
+      SymbolNode sn = varEnum.nextElement();
       Data d = (Data)LevelData.get(sn.getName().toString());
       if (d != null) {
 	OpDefNode opDef = (OpDefNode)gcon.getSymbol(sn.getName());

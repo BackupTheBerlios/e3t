@@ -139,11 +139,11 @@ public class Liveness implements ToolGlobals, ASTConstants {
       {
 	ExprNode body = (ExprNode)args[0];
 	try {
-	  ContextEnumerator enum =
+	  ContextEnumerator varEnum =
 	    tool.contexts(expr, con, TLCState.Empty, TLCState.Empty, EvalControl.Clear);
 	  Context con1;
 	  LNDisj res = new LNDisj(0);
-	  while ((con1 = enum.nextElement()) != null) {
+	  while ((con1 = varEnum.nextElement()) != null) {
 	    LiveExprNode kid = astToLive(tool, body, con1);
 	    res.addDisj(kid);
 	  }
@@ -164,11 +164,11 @@ public class Liveness implements ToolGlobals, ASTConstants {
       {
 	ExprNode body = (ExprNode)args[0];
 	try {
-	  ContextEnumerator enum =
+	  ContextEnumerator varEnum =
 	    tool.contexts(expr, con, TLCState.Empty, TLCState.Empty, EvalControl.Clear);
 	  Context con1;
 	  LNConj res = new LNConj(0);
-	  while ((con1 = enum.nextElement()) != null) {
+	  while ((con1 = varEnum.nextElement()) != null) {
 	    LiveExprNode kid = astToLive(tool, body, con1);
 	    res.addConj(kid);
 	  }

@@ -105,9 +105,9 @@ implements Enumerable, Reducible {
 	Value elem = this.elems.elementAt(i);
 	cupElems.addElement(elem);
       }
-      ValueEnumeration enum = ((Enumerable)set).elements();
+      ValueEnumeration varEnum = ((Enumerable)set).elements();
       Value elem;
-      while ((elem = enum.nextElement()) != null) {
+      while ((elem = varEnum.nextElement()) != null) {
 	if (!this.member(elem)) cupElems.addElement(elem);
       }
       return new SetEnumValue(cupElems, false);
@@ -165,9 +165,9 @@ implements Enumerable, Reducible {
 	  return cap.capSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = cap.elements();	
+	ValueEnumeration varEnum = cap.elements();	
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, cap.isNormalized());
@@ -179,9 +179,9 @@ implements Enumerable, Reducible {
 	  return cup.cupSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = cup.elements();
+	ValueEnumeration varEnum = cup.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, false);
@@ -193,9 +193,9 @@ implements Enumerable, Reducible {
 	  return diff.diffSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = diff.elements();
+	ValueEnumeration varEnum = diff.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, diff.set1.isNormalized());
@@ -207,9 +207,9 @@ implements Enumerable, Reducible {
 	  return uv.realSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = uv.elements();
+	ValueEnumeration varEnum = uv.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, false);
@@ -221,9 +221,9 @@ implements Enumerable, Reducible {
 	  return pset.pset;
 	}
 	ValueVec vals = new ValueVec(pset.size());
-	ValueEnumeration enum = pset.elements();
+	ValueEnumeration varEnum = pset.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, false);
@@ -235,9 +235,9 @@ implements Enumerable, Reducible {
 	  return rcds.rcdSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = rcds.elements();
+	ValueEnumeration varEnum = rcds.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, rcds.isNormalized());
@@ -249,9 +249,9 @@ implements Enumerable, Reducible {
 	  return fcns.fcnSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = fcns.elements();
+	ValueEnumeration varEnum = fcns.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, fcns.isNormalized());
@@ -263,9 +263,9 @@ implements Enumerable, Reducible {
 	  return tvs.tupleSet;
 	}
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = tvs.elements();
+	ValueEnumeration varEnum = tvs.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, tvs.isNormalized());
@@ -275,9 +275,9 @@ implements Enumerable, Reducible {
 	SetPredValue sPred = (SetPredValue)val;
 	if (sPred.tool == null) return (SetEnumValue)sPred.inVal;
 	ValueVec vals = new ValueVec();
-	ValueEnumeration enum = sPred.elements();
+	ValueEnumeration varEnum = sPred.elements();
 	Value elem;
-	while ((elem = enum.nextElement()) != null) {
+	while ((elem = varEnum.nextElement()) != null) {
 	  vals.addElement(elem);
 	}
 	return new SetEnumValue(vals, sPred.isNormalized());

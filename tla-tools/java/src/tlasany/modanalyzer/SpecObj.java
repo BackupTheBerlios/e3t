@@ -171,11 +171,11 @@ public class SpecObj {
   // Prints the context of one ParseUnit
   public final void printParseUnitContext() 
   {
-    Enumeration enum = parseUnitContext.keys();
+    Enumeration varEnum = parseUnitContext.keys();
  
     RuntimeConfiguration.get().getOutStream().println("parseUnitContext =");
-    while (enum.hasMoreElements()) {
-      String key = (String)enum.nextElement();
+    while (varEnum.hasMoreElements()) {
+      String key = (String)varEnum.nextElement();
       RuntimeConfiguration.get().getOutStream().println("  " + key + "-->" + ((ParseUnit)parseUnitContext.get(key)).getName());
     }
   }
