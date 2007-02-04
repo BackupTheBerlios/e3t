@@ -346,5 +346,24 @@
           pageClass="de.techjava.tla.ui.workingsets.TLAWorkingSet"
           id="de.techjava.tla.ui.workingsets.TLAWorkingSet"/>
  </extension>
+ <extension
+       point="org.eclipse.ui.views">
+    <view
+          class="de.techjava.tla.ui.views.SymbolView"
+          icon="icons/sample.gif"
+          id="de.techjava.tla.ui.views.SymbolView"
+          name="Symbol View"/>
+   
+ </extension>
+ <extension
+       point="org.eclipse.ui.perspectiveExtensions">
+    <perspectiveExtension targetID="org.eclipse.ui.resourcePerspective">
+       <view
+             id="de.techjava.tla.ui.views.SymbolView"
+             ratio="0.5"
+             relationship="right"
+             relative="org.eclipse.ui.views.TaskList"/>
+    </perspectiveExtension>
+ </extension>
    
 </plugin>
